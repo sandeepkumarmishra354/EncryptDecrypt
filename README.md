@@ -13,3 +13,6 @@ print("Encrypted: {}".format(txt))
 txt = en.startDecryption()
 print("Decrypted: {}".format(txt))
 ```
+## output
+*Encrypted: 1#4d%3df&
+Decrypted: abc*
