@@ -1,3 +1,4 @@
+#!/usr/bin/python
 class Encrypt:
     def __init__(self):
         self.key = ({'a':'1#4', 'b':'d%3', 'c':'df&', 'd':'@34', 'e':'f61', 'f':'dfq', 'g':'@1@', 'h':'fg4','i':'d4d',
