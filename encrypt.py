@@ -1,13 +1,23 @@
-#!/usr/bin/python
 class Encrypt:
     def __init__(self):
-        self.key = ({'a':'1#4', 'b':'d%3', 'c':'df&', 'd':'@34', 'e':'f61', 'f':'dfq', 'g':'@1@', 'h':'fg4','i':'d4d',
+
+        lowerCaseKey = {'a':'1#4', 'b':'d%3', 'c':'df&', 'd':'@34', 'e':'f61', 'f':'dfq', 'g':'@1@', 'h':'fg4','i':'d4d',
         'j':'**5', 'k':'d33', 'l':'=+0', 'm':'%$$', 'n':'~`^', 'o':'!!(', 'p':')^(', 'q':'#-)', 'r':'s^f', 's':'0%6',
-        't':'ff#', 'u':'$dd', 'v':'<?%', 'w':'d+x', 'x':'vv)', 'y':'$gQ', 'z':'5^b', ' ':'spc', '`':'QZX', '~':'{R)',
-        '1':'4$]', '2':'fDf', '3':'%^G', '4':'[F]', '5':'~1W', '6':'GH&', '7':'|\Y', '8':'F4Z', '9':'0O{', '0':'AQA',
+        't':'ff#', 'u':'$dd', 'v':'<?%', 'w':'d+x', 'x':'vv)', 'y':'$gQ', 'z':'5^b'}
+
+        numKey = {'1':'4$]', '2':'fDf', '3':'%^G', '4':'[F]', '5':'~1W', '6':'GH&', '7':'|\Y', '8':'F4Z', '9':'0O{', '0':'AQA'}
+
+        specialSymbolKey = {' ':'spc', '`':'QZX', '~':'{R)',
         '!':'_+#', '@':'DD<', '#':'!@!', '$':'iYF', '%':'FqQ', '^':'FLF', '&':'$$$', '*':'~Q~', '(':'(((', ')':')))',
         '-':'+++', '_':'D~~', '=':'Brb', '+':'PLs', '[':'BRI', ']':'BLE', '{':'MRI', '}':'MLE', ';':'SMC', ':':'onc',
-        "'":'Scl', '"':'Dcl', '<':'RAL', '>':'LAL', ',':'COM', '.':'DOT', '/':'SLS', '?':'qeS', '|':'ORC'})
+        "'":'Scl', '"':'Dcl', '<':'RAL', '>':'LAL', ',':'COM', '.':'DOT', '/':'SLS', '?':'qeS', '|':'ORC'}
+
+        upperCaseKey = {'A':'!wW', 'B':'@Qez', 'C':'007', 'D':'eFD', 'E':'#4v', 'F':'KKl', 'G':'`~c', 'H':'HbH', 'I':'yTy',
+        'J':'DGF', 'K':'hfH', 'L':'MNO','M':'asd', 'N':'BfQ', 'O':'PQr', 'P':'Qx%', 'Q':'rSt', 'R':'{O@', 'S':'z!-',
+        'T':'Fv{', 'U':'VWx', 'V':'WXy', 'W':'www', 'X':'&Yq', 'Y':'^f#', 'Z':'ZZq'}
+
+        self.key = {**lowerCaseKey,**numKey,**specialSymbolKey,**upperCaseKey}
+
         self.txtForEncrypt = None
 
     def startEncryption(self):
