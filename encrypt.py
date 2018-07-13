@@ -1,22 +1,30 @@
+import sys
+try:
+    import secrets
+except ImportError:
+    print("python v3.5 or greater required..")
+    sys.exit(0)
+
 class Encrypt:
     def __init__(self):
 
-        lowerCaseKey = {'a':'1#4', 'b':'d%3', 'c':'df&', 'd':'@34', 'e':'f61', 'f':'dfq', 'g':'@1@', 'h':'fg4','i':'d4d',
-        'j':'**5', 'k':'d33', 'l':'=+0', 'm':'%$$', 'n':'~`^', 'o':'!!(', 'p':')^(', 'q':'#-)', 'r':'s^f', 's':'0%6',
-        't':'ff#', 'u':'$dd', 'v':'<?%', 'w':'d+x', 'x':'vv)', 'y':'$gQ', 'z':'5^b'}
+        lkey = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s',
+        't','u','v','w','x','y','z']
+        ukey = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S',
+        'T','U','V','W','X','Y','Z']
+        numKey = ['1','2','3','4','5','6','7','8','9','0']
+        splKey = ['`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+','[',']',
+        '{','}',';',':',"'",'"',',','<','.','>','/','?','|',' ']
 
-        numKey = {'1':'4$]', '2':'fDf', '3':'%^G', '4':'[F]', '5':'~1W', '6':'GH&', '7':'|\Y', '8':'F4Z', '9':'0O{', '0':'AQA'}
-
-        specialSymbolKey = {' ':'spc', '`':'QZX', '~':'{R)',
-        '!':'_+#', '@':'DD<', '#':'!@!', '$':'iYF', '%':'FqQ', '^':'FLF', '&':'$$$', '*':'~Q~', '(':'(((', ')':')))',
-        '-':'+++', '_':'D~~', '=':'Brb', '+':'PLs', '[':'BRI', ']':'BLE', '{':'MRI', '}':'MLE', ';':'SMC', ':':'onc',
-        "'":'Scl', '"':'Dcl', '<':'RAL', '>':'LAL', ',':'COM', '.':'DOT', '/':'SLS', '?':'qeS', '|':'ORC'}
-
-        upperCaseKey = {'A':'!wW', 'B':'@Qez', 'C':'007', 'D':'eFD', 'E':'#4v', 'F':'KKl', 'G':'`~c', 'H':'HbH', 'I':'yTy',
-        'J':'DGF', 'K':'hfH', 'L':'MNO','M':'asd', 'N':'BfQ', 'O':'PQr', 'P':'Qx%', 'Q':'rSt', 'R':'{O@', 'S':'z!-',
-        'T':'Fv{', 'U':'VWx', 'V':'WXy', 'W':'www', 'X':'&Yq', 'Y':'^f#', 'Z':'ZZq'}
-
-        self.key = {**lowerCaseKey,**numKey,**specialSymbolKey,**upperCaseKey}
+        self.key = {}
+        for k in lkey:
+            self.key[k] = secrets.token_hex(nbytes=3)
+        for k in ukey:
+            self.key[k] = secrets.token_hex(nbytes=3)
+        for k in numKey:
+            self.key[k] = secrets.token_hex(nbytes=3)
+        for k in splKey:
+            self.key[k] = secrets.token_hex(nbytes=3)
 
         self.txtForEncrypt = None
 
