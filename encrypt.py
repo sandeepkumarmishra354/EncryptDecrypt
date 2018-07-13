@@ -40,14 +40,14 @@ class Encrypt:
         decryptedText = ""
         data = []
         ini = 0
-        lst = 3
+        lst = 6
         if enTxt == "":
             return self.txtForEncrypt
         else:
-            for i in range(len(enTxt)//3):
+            for i in range(len(enTxt)//6):
                 data.append(enTxt[ini:lst])
                 ini = lst
-                lst += 3
+                lst += 6
             for dt in data:
                 for ch in self.key:
                     if self.key[ch] == dt:
