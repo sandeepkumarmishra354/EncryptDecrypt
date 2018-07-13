@@ -2,6 +2,7 @@
 # python3 required
 
 Python script for text encryption and decryption
+it generates truely random keys for every session
 
 ex-
 ```
